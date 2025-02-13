@@ -1,0 +1,26 @@
+<%= form_with(model: [list, bookmark], local: true) do |form| %>
+  <% if bookmark.errors.any? %>
+    <div class="alert alert-danger">
+      <h4>There were errors with your submission:</h4>
+      <ul>
+        <% bookmark.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :movie_id, 'Movie' %>
+    <%= form.collection_select :movie_id, Movie.all, :id, :title, prompt: 'Select a movie', class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :comment, 'Comment' %>
+    <%= form.text_area :comment, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit 'Add Bookmark', class: 'btn btn-primary' %>
+  </div>
+<% end %>

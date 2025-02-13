@@ -17,6 +17,9 @@ gem "font-awesome-sass", "~> 6.1"
 gem "simple_form"
 gem "sassc-rails" # Uncomment this line
 
+gem 'open-uri'
+gem 'json'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 

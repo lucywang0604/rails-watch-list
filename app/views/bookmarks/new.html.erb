@@ -1,0 +1,7 @@
+
+<%= form_with(model: [@list, @bookmark], local: true) do |form| %>
+  <%= form.label :comment %>
+  <%= form.text_field :comment %>
+
+  <%= form.submit "Add Bookmark" %>
+<% end %>
